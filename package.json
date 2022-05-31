@@ -1,0 +1,23 @@
+{
+  "name": "zuckbook-api",
+  "version": "1.0.0",
+  "description": "A backend social network api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KingAusti/zuckbook-api.git"
+  },
+  "author": "KingAusti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KingAusti/zuckbook-api/issues"
+  },
+  "homepage": "https://github.com/KingAusti/zuckbook-api#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.5"
+  }
+}
