@@ -1,5 +1,4 @@
-const { response } = require('express');
-const { User, Thought } = require('../Models');
+const { User } = require('../Models');
 
 const userController = {
     getUsers(req, res) {
@@ -63,7 +62,44 @@ const userController = {
             }
             res.json({message: 'Requested user has been deleted. Good job bud.'})
         })
-
+        .catch(err => {
+            console.error(err)
+            res.status(500).json(err)
+        })
+    },
+    addFriend(req,res) {
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $addToSet: { friends: req.params.friendId }},
+            { new: true }
+        )
+        .then(userData => {
+            if(!userData) {
+                return res.status(404).json({message: 'no user found with that id. Try again bud.'})                
+            }
+            res.json(userData)
+        })
+        .catch(err => {
+            console.error(err)
+            res.status(500).json(err)
+        })
+    },
+    removeFriend(req,res) {
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $pull: { friends: req.params.friendId }},
+            { new: true }
+        )
+        .then(userData => {
+            if(!userData) {
+                return res.status(404).json({message: 'no user found with that id. Try again bud.'})                
+            }
+            res.json(userData)
+        })
+        .catch(err => {
+            console.error(err)
+            res.status(500).json(err)
+        })
     }
 }
 
