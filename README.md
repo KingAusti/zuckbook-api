@@ -31,7 +31,7 @@ This a project was built using <br>
 ---
 ## Demo
 ![short gif of a portion of the walkthrough](./Assets/abridged-walkthrough.gif) <br>
-[Full Walkthrough Video]()
+[Full Walkthrough Video](https://drive.google.com/file/d/1n76Hu7toctZ7qbegFBfcbF6tFlDuWbii/view?usp=sharing)
 ## Author 
 [KingAusti](https://github.com/KingAusti)
 
